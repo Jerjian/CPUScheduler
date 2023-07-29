@@ -1,0 +1,39 @@
+test
+test
+test
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Running
+	Process{PID=1, nbrOfInstructions=1, pcb=PCB{processState=RUNNING, programCounter=1, registers=[68, 70], ioDeviceAllocatedTo=0, clockTimeSinceIORequest=0}, ioRequests=[], ioDevices=[]}
+Ready Queue
+	Process{PID=1, nbrOfInstructions=1, pcb=PCB{processState=READY, programCounter=0, registers=[79, 92], ioDeviceAllocatedTo=0, clockTimeSinceIORequest=0}, ioRequests=[], ioDevices=[]}
+	Process{PID=1, nbrOfInstructions=1, pcb=PCB{processState=READY, programCounter=0, registers=[1, 96], ioDeviceAllocatedTo=0, clockTimeSinceIORequest=0}, ioRequests=[], ioDevices=[]}
+Wait Queue 1
+Wait Queue 2
+Terminated
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Running
+	Process{PID=1, nbrOfInstructions=1, pcb=PCB{processState=RUNNING, programCounter=1, registers=[79, 92], ioDeviceAllocatedTo=0, clockTimeSinceIORequest=0}, ioRequests=[], ioDevices=[]}
+Ready Queue
+	Process{PID=1, nbrOfInstructions=1, pcb=PCB{processState=READY, programCounter=0, registers=[1, 96], ioDeviceAllocatedTo=0, clockTimeSinceIORequest=0}, ioRequests=[], ioDevices=[]}
+Wait Queue 1
+Wait Queue 2
+Terminated
+	Process{PID=1, nbrOfInstructions=1, pcb=PCB{processState=TERMINATED, programCounter=1, registers=[68, 70], ioDeviceAllocatedTo=0, clockTimeSinceIORequest=0}, ioRequests=[], ioDevices=[]}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Running
+	Process{PID=1, nbrOfInstructions=1, pcb=PCB{processState=RUNNING, programCounter=1, registers=[1, 96], ioDeviceAllocatedTo=0, clockTimeSinceIORequest=0}, ioRequests=[], ioDevices=[]}
+Ready Queue
+Wait Queue 1
+Wait Queue 2
+Terminated
+	Process{PID=1, nbrOfInstructions=1, pcb=PCB{processState=TERMINATED, programCounter=1, registers=[68, 70], ioDeviceAllocatedTo=0, clockTimeSinceIORequest=0}, ioRequests=[], ioDevices=[]}
+	Process{PID=1, nbrOfInstructions=1, pcb=PCB{processState=TERMINATED, programCounter=1, registers=[79, 92], ioDeviceAllocatedTo=0, clockTimeSinceIORequest=0}, ioRequests=[], ioDevices=[]}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Running
+Ready Queue
+Wait Queue 1
+Wait Queue 2
+Terminated
+	Process{PID=1, nbrOfInstructions=1, pcb=PCB{processState=TERMINATED, programCounter=1, registers=[68, 70], ioDeviceAllocatedTo=0, clockTimeSinceIORequest=0}, ioRequests=[], ioDevices=[]}
+	Process{PID=1, nbrOfInstructions=1, pcb=PCB{processState=TERMINATED, programCounter=1, registers=[79, 92], ioDeviceAllocatedTo=0, clockTimeSinceIORequest=0}, ioRequests=[], ioDevices=[]}
+	Process{PID=1, nbrOfInstructions=1, pcb=PCB{processState=TERMINATED, programCounter=1, registers=[1, 96], ioDeviceAllocatedTo=0, clockTimeSinceIORequest=0}, ioRequests=[], ioDevices=[]}
