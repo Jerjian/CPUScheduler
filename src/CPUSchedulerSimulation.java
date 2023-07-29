@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class CPUSchedulerSimulation {
-    //TODO: Done
+
     public static void main(String[] args) throws FileNotFoundException {
         int nbrOfCPU;
         int q;
@@ -52,7 +52,9 @@ public class CPUSchedulerSimulation {
 
         //todo: make a different method for each Schedule
         cs.executeFCFS();
+//        CPUScheduler.timeClock = 0;
         //cs.executeSJB()
+//        CPUScheduler.timeClock = 0;
         //cs.executeRR(2)
 
 
@@ -178,25 +180,19 @@ class CPUScheduler {
     //start by adding a process to the ready queue.
     public CPUScheduler(ArrayList<Process> processes) {
         this.processes = processes;
-        for (Process process : processes) {
-            this.addProcessToReadyQueue(process);
-        }
     }
 
-    //todo: done
     public void addProcessToReadyQueue(Process process){
         process.pcb.processState = ProcessState.READY;
         readyQueue.add(process);
     }
 
-    //todo: done
     public void addProcessToWaitQueue(Process process){
         process.pcb.processState = ProcessState.WAITING;
         waitQueue.add(process);
     }
 
     //Check the first element of the  waitqueue, add +1 to clockTimeSinceIORequest
-    //todo: done
     public void updateWaitQueueTime(){
         Process waitingProcess = waitQueue.peek();
 
@@ -219,7 +215,7 @@ class CPUScheduler {
                 waitingProcess.pcb.clockTimeSinceIORequest = 0;
                 waitQueue.poll();
 
-            }else{
+            }else{ //goes to ready queue
                 waitingProcess.pcb.processState = ProcessState.READY;
                 waitingProcess.pcb.clockTimeSinceIORequest = 0;
                 waitQueue.poll();
@@ -228,8 +224,153 @@ class CPUScheduler {
         }
     }
 
-    public void executeFCFS(){
+    public void addArrivals(int timeClock){
+        for (Process process : processes) {
+            if (process.pcb.arrivalTime == timeClock) addProcessToReadyQueue(process);
+        }
+    }
+    public boolean isAllProcessTerminated(){
+        for (Process process : processes) {
+            if (!process.pcb.processState.equals(ProcessState.TERMINATED)) return false;
+        }
+        return true;
+    }
 
+    public void executeFCFS(){
+        Process currentProcess = null;
+        boolean isTerminated = false;
+        boolean isWaitQueue = false;
+
+        while (!isAllProcessTerminated()) {
+            addArrivals(timeClock);
+            if (!readyQueue.isEmpty() || currentProcess != null){
+                if(currentProcess == null) currentProcess = readyQueue.poll();
+                currentProcess.pcb.processState = ProcessState.RUNNING;
+                currentProcess.pcb.programCounter++;
+                updateWaitQueueTime();
+
+
+                printInfo(currentProcess);
+                //add to waitqueue
+                if (currentProcess.ioRequests.contains(currentProcess.pcb.programCounter)) {
+//                    printInfo(currentProcess);
+                    addProcessToWaitQueue(currentProcess);
+                    currentProcess = null;
+                    timeClock++;
+                    continue;
+                }
+
+                //Last instruction, so set it as terminated.
+                if (currentProcess.pcb.programCounter == currentProcess.totalExecTime && !currentProcess.pcb.processState.equals(ProcessState.WAITING)) {
+//                    printInfo(currentProcess);
+                    currentProcess.pcb.processState = ProcessState.TERMINATED;
+                    currentProcess = null;
+                    timeClock++;
+                    continue;
+                }
+                addWaitingProcessToReadyQueueOrTerminated();
+
+
+
+            }else {
+                updateWaitQueueTime();
+                printInfo();
+                addWaitingProcessToReadyQueueOrTerminated();
+            }
+            timeClock++;
+        }
+        //print all terminated stuff
+        printInfo();
+
+
+
+
+//        Process currentProcess = null;
+//        boolean resetCurrentProcess = false;
+//
+//        while(!readyQueue.isEmpty() || !waitQueue.isEmpty()){
+//            if(currentProcess != null && currentProcess.pcb.processState.equals(ProcessState.RUNNING)){
+//                //run
+//                currentProcess.pcb.programCounter++;
+//                updateWaitQueueTime();
+//                printInfo(currentProcess);
+//
+//                //goes in waitqueue
+//                if (currentProcess.ioRequests.contains(currentProcess.pcb.programCounter)){
+//                    waitQueue.add(currentProcess.clone());
+//                    currentProcess = null;
+//                }
+////                if (currentProcess)
+//
+//                timeClock++;
+//                printInfo(currentProcess);
+//                addWaitingProcessToReadyQueueOrTerminated();
+//            }else{
+//                if (readyQueue.isEmpty()){
+//                    updateWaitQueueTime();
+//                }else{
+//                    currentProcess = readyQueue.poll();
+//                }
+//            }
+//        }
+
+        /*
+        1.while readyQueue and waitQueue is not empty
+            2. Check if we have currentProcess
+            3. if currentProcess running then just run it
+            4. if currentProcess is not running then
+                5. check if readyQueue is empty
+                    if ready queue empty, then just update the waitqueue
+                    if readyqueue is not empty, get the process and run it
+
+         * */
+
+//
+//        while (!readyQueue.isEmpty() || !waitQueue.isEmpty()) {
+//
+//            //get a new process
+//            if (currentProcess == null){
+//                currentProcess = readyQueue.poll();
+//            }
+//            //if currentProcess IS STILL NULL (readyqueue empty)
+//            if (currentProcess == null){
+//                updateWaitQueueTime();
+//                printInfo();
+//                addWaitingProcessToReadyQueueOrTerminated();
+//            }else{
+//                currentProcess.pcb.processState = ProcessState.RUNNING;
+//                currentProcess.pcb.programCounter++;
+//                updateWaitQueueTime();
+//
+//                //currentProcess goes to Waitqueue
+//                if (currentProcess.ioRequests.contains(currentProcess.pcb.programCounter)) {
+//                    printInfo(currentProcess);
+//                    addProcessToWaitQueue(currentProcess.clone()); //adding process to wait queue
+//                    resetCurrentProcess = true;
+//                }
+//
+//                //Last instruction, so set it as terminated.
+//                if (currentProcess.pcb.programCounter == currentProcess.totalExecTime) {
+//                    printInfo(currentProcess);
+//                    currentProcess.pcb.processState = ProcessState.TERMINATED;
+//                    processes.remove(currentProcess);
+//                    processes.add(currentProcess.clone());
+//                    resetCurrentProcess = true;
+//                }
+//
+//                printInfo(currentProcess);
+//
+//                //Check in the waitQueue if there's process ready to be added to ready queue.
+//                addWaitingProcessToReadyQueueOrTerminated();
+//
+//                if (currentProcess.pcb.processState.equals(ProcessState.RUNNING)){
+//                    currentProcess.pcb.processState = ProcessState.READY;
+//                    readyQueue.add(currentProcess.clone());
+//                }
+//            }
+//        }
+//        //print all terminated stuff
+//        printInfo();
     }
 
     public void printInfo(){
@@ -259,7 +400,7 @@ class CPUScheduler {
         System.out.println("Time clock: " + timeClock);
 
         System.out.println("Running");
-        System.out.println("\t"+currentProcess);
+        if (currentProcess.pcb.processState.equals(ProcessState.RUNNING)) System.out.println("\t"+currentProcess);
         System.out.println("Ready Queue");
 
         for (Process process : readyQueue) {
