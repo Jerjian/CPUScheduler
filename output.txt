@@ -5,9 +5,16 @@ Running
 	CPU core 1
 		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
 	CPU core 2
+		Process{PID=1, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[], totalExecTime=3}
 	CPU core 3
+		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=3}, ioRequests=[1, 2, 3], totalExecTime=7}
 	CPU core 4
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=4}, ioRequests=[4, 5, 9], totalExecTime=10}
 Ready Queue
+	Process{PID=4, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=5, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=6, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=7, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[], totalExecTime=4}
 Wait Queue
 Terminated
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -16,174 +23,434 @@ Running
 	CPU core 1
 		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
 	CPU core 2
+		Process{PID=1, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[], totalExecTime=3}
 	CPU core 3
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=3}, ioRequests=[5], totalExecTime=11}
 	CPU core 4
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=4}, ioRequests=[4, 5, 9], totalExecTime=10}
 Ready Queue
+	Process{PID=5, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=6, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=7, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[], totalExecTime=4}
 Wait Queue
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=1, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
 Terminated
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 2
 Running
 	CPU core 1
-		Process{PID=1, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
 	CPU core 2
+		Process{PID=1, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[], totalExecTime=3}
 	CPU core 3
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=3}, ioRequests=[5], totalExecTime=11}
 	CPU core 4
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=4}, ioRequests=[4, 5, 9], totalExecTime=10}
 Ready Queue
+	Process{PID=6, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=7, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[], totalExecTime=4}
 Wait Queue
-	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=1, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
 Terminated
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 3
 Running
 	CPU core 1
-		Process{PID=1, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
 	CPU core 2
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=2}, ioRequests=[3], totalExecTime=14}
 	CPU core 3
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=3}, ioRequests=[5], totalExecTime=11}
 	CPU core 4
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=4}, ioRequests=[4, 5, 9], totalExecTime=10}
 Ready Queue
+	Process{PID=7, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[], totalExecTime=4}
+	Process{PID=2, pcb=PCB{processState=READY, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
 Wait Queue
-	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
 Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 4
 Running
 	CPU core 1
-		Process{PID=1, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
 	CPU core 2
-		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[2, 5, 8], totalExecTime=10}
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=2}, ioRequests=[3], totalExecTime=14}
 	CPU core 3
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=3}, ioRequests=[5], totalExecTime=11}
 	CPU core 4
+		Process{PID=7, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=4}, ioRequests=[], totalExecTime=4}
 Ready Queue
+	Process{PID=2, pcb=PCB{processState=READY, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
 Wait Queue
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
 Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 5
 Running
 	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
 	CPU core 2
-		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[2, 5, 8], totalExecTime=10}
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=2}, ioRequests=[3], totalExecTime=14}
 	CPU core 3
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=3}, ioRequests=[5], totalExecTime=11}
 	CPU core 4
+		Process{PID=7, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=4}, ioRequests=[], totalExecTime=4}
 Ready Queue
+	Process{PID=2, pcb=PCB{processState=READY, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=0, pcb=PCB{processState=READY, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
 Wait Queue
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=4, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
 Terminated
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 6
 Running
 	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
 	CPU core 2
-		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[2, 5, 8], totalExecTime=10}
+		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[1, 2, 3], totalExecTime=7}
 	CPU core 3
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=3}, ioRequests=[2, 5, 8], totalExecTime=10}
 	CPU core 4
+		Process{PID=7, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=4}, ioRequests=[], totalExecTime=4}
 Ready Queue
 Wait Queue
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=4, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=4, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=0}, ioRequests=[3], totalExecTime=14}
 Terminated
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 7
 Running
 	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=6, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
 	CPU core 2
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[4, 5, 9], totalExecTime=10}
 	CPU core 3
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=3}, ioRequests=[2, 5, 8], totalExecTime=10}
 	CPU core 4
+		Process{PID=7, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=4}, ioRequests=[], totalExecTime=4}
 Ready Queue
 Wait Queue
-	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=4, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
 Terminated
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 8
 Running
 	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
 	CPU core 2
 	CPU core 3
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=3}, ioRequests=[2, 5, 8], totalExecTime=10}
 	CPU core 4
 Ready Queue
 Wait Queue
-	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=4, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
 Terminated
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 9
 Running
 	CPU core 1
-		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=6, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
 	CPU core 2
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=6, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=2}, ioRequests=[5], totalExecTime=11}
 	CPU core 3
 	CPU core 4
 Ready Queue
 Wait Queue
+	Process{PID=6, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
 Terminated
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 10
 Running
 	CPU core 1
-		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=9, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
 	CPU core 2
-		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=10, finishingTime=0, firstClockTimeItIsRunning=10, cpuCore=2}, ioRequests=[1, 2, 3], totalExecTime=7}
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=2}, ioRequests=[5], totalExecTime=11}
 	CPU core 3
 	CPU core 4
 Ready Queue
 Wait Queue
+	Process{PID=6, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
 Terminated
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 11
 Running
 	CPU core 1
-		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
 	CPU core 2
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=2}, ioRequests=[5], totalExecTime=11}
 	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=3}, ioRequests=[3], totalExecTime=14}
 	CPU core 4
 Ready Queue
 Wait Queue
-	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=1, clockTimeSinceIORequest=1, arrivalTime=10, finishingTime=0, firstClockTimeItIsRunning=10, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
 Terminated
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 12
 Running
 	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
+	CPU core 2
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=9, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=2}, ioRequests=[5], totalExecTime=11}
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 13
+Running
+	CPU core 1
+		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[1, 2, 3], totalExecTime=7}
+	CPU core 2
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=2}, ioRequests=[5], totalExecTime=11}
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=6, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 14
+Running
+	CPU core 1
+	CPU core 2
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=2}, ioRequests=[5], totalExecTime=11}
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 15
+Running
+	CPU core 1
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=6, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[4, 5, 9], totalExecTime=10}
+	CPU core 2
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=14, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 16
+Running
+	CPU core 1
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[4, 5, 9], totalExecTime=10}
+	CPU core 2
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=9, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=14, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 17
+Running
+	CPU core 1
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[4, 5, 9], totalExecTime=10}
+	CPU core 2
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=6, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[2, 5, 8], totalExecTime=10}
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=11, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=14, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 18
+Running
+	CPU core 1
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=9, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[4, 5, 9], totalExecTime=10}
+	CPU core 2
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[2, 5, 8], totalExecTime=10}
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=11, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=14, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 19
+Running
+	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=12, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
+	CPU core 2
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[2, 5, 8], totalExecTime=10}
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=12, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=9, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=14, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 20
+Running
+	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=13, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
+	CPU core 2
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=13, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=9, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=14, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 21
+Running
+	CPU core 1
+		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[1, 2, 3], totalExecTime=7}
+	CPU core 2
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=14, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=3, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=9, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=13, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=14, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 22
+Running
+	CPU core 1
+		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[1, 2, 3], totalExecTime=7}
 	CPU core 2
 	CPU core 3
 	CPU core 4
 Ready Queue
 Wait Queue
-	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=1, clockTimeSinceIORequest=2, arrivalTime=10, finishingTime=0, firstClockTimeItIsRunning=10, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=9, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
 	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=13, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
 Terminated
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=14, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=TERMINATED, programCounter=14, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=21, firstClockTimeItIsRunning=3, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Time clock: 13
+Time clock: 23
 Running
 	CPU core 1
-		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=10, finishingTime=0, firstClockTimeItIsRunning=10, cpuCore=1}, ioRequests=[1, 2, 3], totalExecTime=7}
+		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=6, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[1, 2, 3], totalExecTime=7}
 	CPU core 2
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[4, 5, 9], totalExecTime=10}
 	CPU core 3
 	CPU core 4
 Ready Queue
 Wait Queue
 	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=8, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=13, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
 Terminated
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=14, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=TERMINATED, programCounter=14, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=21, firstClockTimeItIsRunning=3, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Time clock: 14
+Time clock: 24
 Running
 	CPU core 1
+		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[1, 2, 3], totalExecTime=7}
 	CPU core 2
 	CPU core 3
 	CPU core 4
 Ready Queue
 Wait Queue
 	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=8, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
-	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=10, finishingTime=0, firstClockTimeItIsRunning=10, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=13, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
 Terminated
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=3, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=23, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=14, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=TERMINATED, programCounter=14, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=21, firstClockTimeItIsRunning=3, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Time clock: 15
+Time clock: 25
 Running
 	CPU core 1
 		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=9, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
@@ -192,11 +459,16 @@ Running
 	CPU core 4
 Ready Queue
 Wait Queue
-	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=1, arrivalTime=10, finishingTime=0, firstClockTimeItIsRunning=10, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=13, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
 Terminated
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=2, pcb=PCB{processState=TERMINATED, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=24, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=23, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=14, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=TERMINATED, programCounter=14, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=21, firstClockTimeItIsRunning=3, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Time clock: 16
+Time clock: 26
 Running
 	CPU core 1
 		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
@@ -205,102 +477,548 @@ Running
 	CPU core 4
 Ready Queue
 Wait Queue
-	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=2, arrivalTime=10, finishingTime=0, firstClockTimeItIsRunning=10, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=13, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
 Terminated
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=2, pcb=PCB{processState=TERMINATED, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=24, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=23, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=14, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=TERMINATED, programCounter=14, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=21, firstClockTimeItIsRunning=3, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Time clock: 17
+Time clock: 27
 Running
 	CPU core 1
-		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=10, finishingTime=0, firstClockTimeItIsRunning=10, cpuCore=1}, ioRequests=[1, 2, 3], totalExecTime=7}
 	CPU core 2
 	CPU core 3
 	CPU core 4
 Ready Queue
 Wait Queue
 Terminated
-	Process{PID=0, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=0, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=26, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=2, pcb=PCB{processState=TERMINATED, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=24, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=23, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=14, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=5, pcb=PCB{processState=TERMINATED, programCounter=13, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=6, pcb=PCB{processState=TERMINATED, programCounter=14, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=21, firstClockTimeItIsRunning=3, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=7, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------
+Additional Information on FCFS on 4 cores
+CPU Utilization = 69.23%
+Average Waiting Time = 5.63 Time Clock
+Turnaround Time:
+	 PID=0 = 26 Time Clock
+	 PID=1 = 2 Time Clock
+	 PID=2 = 24 Time Clock
+	 PID=3 = 23 Time Clock
+	 PID=4 = 14 Time Clock
+	 PID=5 = 0 Time Clock
+	 PID=6 = 21 Time Clock
+	 PID=7 = 7 Time Clock
+CPU Response Time:
+	 PID=0 = 0 Time Clock
+	 PID=1 = 0 Time Clock
+	 PID=2 = 0 Time Clock
+	 PID=3 = 0 Time Clock
+	 PID=4 = 1 Time Clock
+	 PID=5 = 2 Time Clock
+	 PID=6 = 3 Time Clock
+	 PID=7 = 4 Time Clock
+*****************
+*****************
+*****************
+*****************
+*****************
+Executing SJF (non-preemtive) on 4 cores
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 0
+Running
+	CPU core 1
+		Process{PID=1, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	CPU core 2
+		Process{PID=7, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[], totalExecTime=4}
+	CPU core 3
+		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=3}, ioRequests=[1, 2, 3], totalExecTime=7}
+	CPU core 4
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=4}, ioRequests=[2, 5, 8], totalExecTime=10}
+Ready Queue
+	Process{PID=3, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=4, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=5, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=6, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+Wait Queue
+Terminated
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 1
+Running
+	CPU core 1
+		Process{PID=1, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	CPU core 2
+		Process{PID=7, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[], totalExecTime=4}
+	CPU core 3
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=3}, ioRequests=[4, 5, 9], totalExecTime=10}
+	CPU core 4
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=4}, ioRequests=[2, 5, 8], totalExecTime=10}
+Ready Queue
+	Process{PID=4, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=5, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=6, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+Wait Queue
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=1, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+Terminated
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 2
+Running
+	CPU core 1
+		Process{PID=1, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	CPU core 2
+		Process{PID=7, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[], totalExecTime=4}
+	CPU core 3
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=3}, ioRequests=[4, 5, 9], totalExecTime=10}
+	CPU core 4
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=4}, ioRequests=[5], totalExecTime=11}
+Ready Queue
+	Process{PID=5, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=6, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+Wait Queue
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=1, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+Terminated
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 3
+Running
+	CPU core 1
+		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[1, 2, 3], totalExecTime=7}
+	CPU core 2
+		Process{PID=7, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[], totalExecTime=4}
+	CPU core 3
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=3}, ioRequests=[4, 5, 9], totalExecTime=10}
+	CPU core 4
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=4}, ioRequests=[5], totalExecTime=11}
+Ready Queue
+	Process{PID=5, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=6, pcb=PCB{processState=READY, programCounter=0, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=-1, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+Wait Queue
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 4
+Running
+	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
+	CPU core 2
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=1, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=2}, ioRequests=[3], totalExecTime=14}
+	CPU core 3
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=3}, ioRequests=[4, 5, 9], totalExecTime=10}
+	CPU core 4
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=4}, ioRequests=[5], totalExecTime=11}
+Ready Queue
+Wait Queue
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 5
+Running
+	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
+	CPU core 2
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=2, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=2}, ioRequests=[3], totalExecTime=14}
+	CPU core 3
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=3}, ioRequests=[2, 5, 8], totalExecTime=10}
+	CPU core 4
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=4}, ioRequests=[5], totalExecTime=11}
+Ready Queue
+Wait Queue
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 6
+Running
+	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
+	CPU core 2
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=2}, ioRequests=[3], totalExecTime=14}
+	CPU core 3
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=3}, ioRequests=[2, 5, 8], totalExecTime=10}
+	CPU core 4
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=4}, ioRequests=[5], totalExecTime=11}
+Ready Queue
+Wait Queue
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=2, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 7
+Running
+	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
+	CPU core 2
+		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[1, 2, 3], totalExecTime=7}
+	CPU core 3
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=3}, ioRequests=[2, 5, 8], totalExecTime=10}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=4, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=4, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 8
+Running
+	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
+	CPU core 2
+	CPU core 3
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=4, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=4, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 9
+Running
+	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=6, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
+	CPU core 2
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=2}, ioRequests=[4, 5, 9], totalExecTime=10}
+	CPU core 3
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=4, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 10
+Running
+	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
+	CPU core 2
+	CPU core 3
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=4, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 11
+Running
+	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
+	CPU core 2
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=6, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=2}, ioRequests=[5], totalExecTime=11}
+	CPU core 3
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=6, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 12
+Running
+	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=9, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
+	CPU core 2
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=2}, ioRequests=[5], totalExecTime=11}
+	CPU core 3
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=6, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 13
+Running
+	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
+	CPU core 2
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=2}, ioRequests=[5], totalExecTime=11}
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 14
+Running
+	CPU core 1
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=1}, ioRequests=[11, 13], totalExecTime=13}
+	CPU core 2
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=9, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=2}, ioRequests=[5], totalExecTime=11}
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 15
+Running
+	CPU core 1
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=6, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
+	CPU core 2
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=2}, ioRequests=[5], totalExecTime=11}
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=6, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 16
+Running
+	CPU core 1
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
+	CPU core 2
+		Process{PID=4, pcb=PCB{processState=RUNNING, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=2, cpuCore=2}, ioRequests=[5], totalExecTime=11}
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 17
+Running
+	CPU core 1
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
+	CPU core 2
+		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[1, 2, 3], totalExecTime=7}
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 18
 Running
 	CPU core 1
 	CPU core 2
+		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[1, 2, 3], totalExecTime=7}
 	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=9, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=3}, ioRequests=[3], totalExecTime=14}
 	CPU core 4
 Ready Queue
 Wait Queue
-	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=1, arrivalTime=10, finishingTime=0, firstClockTimeItIsRunning=10, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=5, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
 Terminated
-	Process{PID=0, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 19
 Running
 	CPU core 1
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=6, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=1}, ioRequests=[4, 5, 9], totalExecTime=10}
 	CPU core 2
+		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=6, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[1, 2, 3], totalExecTime=7}
 	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=3}, ioRequests=[3], totalExecTime=14}
 	CPU core 4
 Ready Queue
 Wait Queue
-	Process{PID=2, pcb=PCB{processState=WAITING, programCounter=3, clockTimeSinceIORequest=2, arrivalTime=10, finishingTime=0, firstClockTimeItIsRunning=10, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=11, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
 Terminated
-	Process{PID=0, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 20
 Running
 	CPU core 1
-		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=10, finishingTime=0, firstClockTimeItIsRunning=10, cpuCore=1}, ioRequests=[1, 2, 3], totalExecTime=7}
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=1}, ioRequests=[4, 5, 9], totalExecTime=10}
 	CPU core 2
+		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=2}, ioRequests=[1, 2, 3], totalExecTime=7}
 	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=3}, ioRequests=[3], totalExecTime=14}
 	CPU core 4
 Ready Queue
 Wait Queue
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=11, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
 Terminated
-	Process{PID=0, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 21
 Running
 	CPU core 1
-		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=5, clockTimeSinceIORequest=0, arrivalTime=10, finishingTime=0, firstClockTimeItIsRunning=10, cpuCore=1}, ioRequests=[1, 2, 3], totalExecTime=7}
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=8, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=1}, ioRequests=[4, 5, 9], totalExecTime=10}
 	CPU core 2
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=12, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=2}, ioRequests=[11, 13], totalExecTime=13}
 	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=12, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=3}, ioRequests=[3], totalExecTime=14}
 	CPU core 4
 Ready Queue
 Wait Queue
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=8, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
 Terminated
-	Process{PID=0, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=2, pcb=PCB{processState=TERMINATED, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=20, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 22
 Running
 	CPU core 1
-		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=6, clockTimeSinceIORequest=0, arrivalTime=10, finishingTime=0, firstClockTimeItIsRunning=10, cpuCore=1}, ioRequests=[1, 2, 3], totalExecTime=7}
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=9, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=1}, ioRequests=[4, 5, 9], totalExecTime=10}
 	CPU core 2
+		Process{PID=5, pcb=PCB{processState=RUNNING, programCounter=13, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=2}, ioRequests=[11, 13], totalExecTime=13}
 	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=13, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=3}, ioRequests=[3], totalExecTime=14}
 	CPU core 4
 Ready Queue
 Wait Queue
+	Process{PID=0, pcb=PCB{processState=WAITING, programCounter=8, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
 Terminated
-	Process{PID=0, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=2, pcb=PCB{processState=TERMINATED, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=20, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Time clock: 23
 Running
 	CPU core 1
-		Process{PID=2, pcb=PCB{processState=RUNNING, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=10, finishingTime=0, firstClockTimeItIsRunning=10, cpuCore=1}, ioRequests=[1, 2, 3], totalExecTime=7}
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=9, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
+	CPU core 2
+	CPU core 3
+		Process{PID=6, pcb=PCB{processState=RUNNING, programCounter=14, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=3}, ioRequests=[3], totalExecTime=14}
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=9, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=13, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+Terminated
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=2, pcb=PCB{processState=TERMINATED, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=20, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 24
+Running
+	CPU core 1
+		Process{PID=0, pcb=PCB{processState=RUNNING, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
 	CPU core 2
 	CPU core 3
 	CPU core 4
 Ready Queue
 Wait Queue
+	Process{PID=3, pcb=PCB{processState=WAITING, programCounter=9, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=13, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
 Terminated
-	Process{PID=0, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=2, pcb=PCB{processState=TERMINATED, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=20, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=TERMINATED, programCounter=14, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=23, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Time clock: 24
+Time clock: 25
+Running
+	CPU core 1
+		Process{PID=3, pcb=PCB{processState=RUNNING, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=1, cpuCore=1}, ioRequests=[4, 5, 9], totalExecTime=10}
+	CPU core 2
+	CPU core 3
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=13, clockTimeSinceIORequest=1, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+Terminated
+	Process{PID=0, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=24, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=2, pcb=PCB{processState=TERMINATED, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=20, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=TERMINATED, programCounter=14, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=23, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 26
+Running
+	CPU core 1
+	CPU core 2
+	CPU core 3
+	CPU core 4
+Ready Queue
+Wait Queue
+	Process{PID=5, pcb=PCB{processState=WAITING, programCounter=13, clockTimeSinceIORequest=2, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+Terminated
+	Process{PID=0, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=24, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=2, pcb=PCB{processState=TERMINATED, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=20, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=25, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=6, pcb=PCB{processState=TERMINATED, programCounter=14, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=23, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Time clock: 27
 Running
 	CPU core 1
 	CPU core 2
@@ -309,18 +1027,38 @@ Running
 Ready Queue
 Wait Queue
 Terminated
-	Process{PID=0, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=0, cpuCore=1}, ioRequests=[2, 5, 8], totalExecTime=10}
-	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=2, finishingTime=4, firstClockTimeItIsRunning=2, cpuCore=1}, ioRequests=[], totalExecTime=3}
-	Process{PID=2, pcb=PCB{processState=TERMINATED, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=10, finishingTime=23, firstClockTimeItIsRunning=10, cpuCore=1}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=0, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=24, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[2, 5, 8], totalExecTime=10}
+	Process{PID=1, pcb=PCB{processState=TERMINATED, programCounter=3, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=2, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=3}
+	Process{PID=2, pcb=PCB{processState=TERMINATED, programCounter=7, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=20, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[1, 2, 3], totalExecTime=7}
+	Process{PID=3, pcb=PCB{processState=TERMINATED, programCounter=10, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=25, firstClockTimeItIsRunning=1, cpuCore=0}, ioRequests=[4, 5, 9], totalExecTime=10}
+	Process{PID=4, pcb=PCB{processState=TERMINATED, programCounter=11, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=16, firstClockTimeItIsRunning=2, cpuCore=0}, ioRequests=[5], totalExecTime=11}
+	Process{PID=5, pcb=PCB{processState=TERMINATED, programCounter=13, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=0, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[11, 13], totalExecTime=13}
+	Process{PID=6, pcb=PCB{processState=TERMINATED, programCounter=14, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=23, firstClockTimeItIsRunning=4, cpuCore=0}, ioRequests=[3], totalExecTime=14}
+	Process{PID=7, pcb=PCB{processState=TERMINATED, programCounter=4, clockTimeSinceIORequest=0, arrivalTime=0, finishingTime=3, firstClockTimeItIsRunning=0, cpuCore=0}, ioRequests=[], totalExecTime=4}
 --------------
-Additional Information on FCFS on 4 cores
-CPU Utilization = 21.74%
-Average Waiting Time = 3.67 Time Clock
+Additional Information on SJF on 4 cores
+CPU Utilization = 69.23%
+Average Waiting Time = 5.13 Time Clock
 Turnaround Time:
-	 PID=0 = 16 Time Clock
+	 PID=0 = 24 Time Clock
 	 PID=1 = 2 Time Clock
-	 PID=2 = 13 Time Clock
+	 PID=2 = 20 Time Clock
+	 PID=3 = 25 Time Clock
+	 PID=4 = 16 Time Clock
+	 PID=5 = 0 Time Clock
+	 PID=6 = 23 Time Clock
+	 PID=7 = 3 Time Clock
 CPU Response Time:
 	 PID=0 = 0 Time Clock
 	 PID=1 = 0 Time Clock
 	 PID=2 = 0 Time Clock
+	 PID=3 = 1 Time Clock
+	 PID=4 = 2 Time Clock
+	 PID=5 = 4 Time Clock
+	 PID=6 = 4 Time Clock
+	 PID=7 = 0 Time Clock
+*****************
+*****************
+*****************
+*****************
+*****************
