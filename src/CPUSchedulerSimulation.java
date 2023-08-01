@@ -6,7 +6,7 @@ public class CPUSchedulerSimulation {
 
     public static void main(String[] args) throws FileNotFoundException {
         int nbrOfCPU = 0;
-        int q;
+        int q = 0;
         ArrayList<String> processesDataString = new ArrayList<>();
         ArrayList<Process> processes = new ArrayList<>();
 
@@ -76,7 +76,7 @@ public class CPUSchedulerSimulation {
         System.out.println("*****************");
         System.out.println("*****************");
         System.out.println("*****************");
-//        cs3.executeRR(2);
+        cs3.executeRR(nbrOfCPU, q);
 
 
 
@@ -161,6 +161,7 @@ class PCB{
     int arrivalTime;
     int finishingTime;
     int firstClockTimeItIsRunning;
+    int qTime;
 
     int cpuCore;
 
@@ -172,6 +173,7 @@ class PCB{
         this.cpuCore = 0;
         this.finishingTime = 0;
         this.firstClockTimeItIsRunning = -1;
+        this.qTime=0;
     }
 
 
@@ -199,6 +201,7 @@ class PCB{
                 ", arrivalTime=" + arrivalTime +
                 ", finishingTime=" + finishingTime +
                 ", firstClockTimeItIsRunning=" + firstClockTimeItIsRunning +
+                ", qTime=" + qTime +
                 ", cpuCore=" + cpuCore +
                 '}';
     }
@@ -218,6 +221,7 @@ class CPUScheduler {
 
     public void addProcessToReadyQueue(Process process){
         process.pcb.processState = ProcessState.READY;
+        process.pcb.cpuCore = 0;
         readyQueue.add(process);
     }
 
@@ -346,11 +350,10 @@ class CPUScheduler {
         System.out.println("Additional Information on FCFS on "+nbrOfCPU+" cores");
 
         printCPUUtilization(processes, timeClock, nbrOfCPU);
-        printWaitingTime(processes, timeClock);
+        printWaitingTime(processes);
         printTurnAroundTime(processes);
         printCPUResponseTime(processes);
     }
-
     //non preemptive.
     public void executeSJF(int nbrOfCPU){
         System.out.println("Executing SJF (non-preemtive) on " + nbrOfCPU + " cores");
@@ -429,7 +432,7 @@ class CPUScheduler {
         //todo: print CPU utilization
         printCPUUtilization(processes, timeClock, nbrOfCPU);
         //todo: print Avg wait time
-        printWaitingTime(processes, timeClock);
+        printWaitingTime(processes);
         //todo: print turnaround time for each process
         printTurnAroundTime(processes);
         //todo: print CPU response time for each process
@@ -437,10 +440,15 @@ class CPUScheduler {
 
     }
 
+    //todo: Round Robin
     public void executeRR(int nbrOfCPU, int q){
         System.out.println("Executing RR on " + nbrOfCPU + " cores");
         if(nbrOfCPU == 0){
             System.out.println("CPU has 0 cores, impossible to run..");
+            return;
+        }
+        if (q == 0){
+            System.out.println("Quamtum unit is 0, will not work"); //todo: fix that
             return;
         }
         ArrayList<Process> currentProcesses = new ArrayList<>();
@@ -450,6 +458,7 @@ class CPUScheduler {
         while (!isAllProcessTerminated()){
             addArrivals(timeClock);
             int nbrOfFreeCpu = nbrOfCPU - currentProcesses.size();
+
 
             //add to currentProcesses
             while (nbrOfFreeCpu != 0 && !readyQueue.isEmpty()){
@@ -471,10 +480,14 @@ class CPUScheduler {
 
             //increase counter
             increaseCounter(currentProcesses);
+            //increase qTime
+            for (Process p : currentProcesses) {
+                p.pcb.qTime +=1;
+            }
             updateWaitQueueTime();
 
-
             printInfo(currentProcesses, nbrOfCPU);
+
 
             Iterator<Process> currentProcessIterator = currentProcesses.iterator();
 
@@ -484,6 +497,7 @@ class CPUScheduler {
                 if (currentProcess.ioRequests.contains(currentProcess.pcb.programCounter)) {
                     isFreeCore[currentProcess.pcb.cpuCore-1] = true;
                     addProcessToWaitQueue(currentProcess);
+                    currentProcess.pcb.qTime = 0; //only in RR
                     currentProcessIterator.remove();
                 }
                 //terminated.
@@ -491,6 +505,14 @@ class CPUScheduler {
                     isFreeCore[currentProcess.pcb.cpuCore-1] = true;
                     currentProcess.pcb.processState = ProcessState.TERMINATED;
                     currentProcess.pcb.finishingTime = timeClock;
+                    currentProcess.pcb.qTime = 0; //only in RR
+                    currentProcessIterator.remove();
+                }
+                //qTime is over
+                if (currentProcess.pcb.qTime == q && !currentProcess.pcb.processState.equals(ProcessState.WAITING) && !currentProcess.pcb.processState.equals(ProcessState.TERMINATED)){
+                    isFreeCore[currentProcess.pcb.cpuCore-1] = true;
+                    addProcessToReadyQueue(currentProcess);
+                    currentProcess.pcb.qTime = 0; //only in RR
                     currentProcessIterator.remove();
                 }
             }
@@ -504,34 +526,12 @@ class CPUScheduler {
         System.out.println("Additional Information on RR on "+nbrOfCPU+" cores");
 
         printCPUUtilization(processes, timeClock, nbrOfCPU);
-        printWaitingTime(processes, timeClock);
+        printWaitingTime(processes);
         printTurnAroundTime(processes);
         printCPUResponseTime(processes);
     }
 
 
-    public void printInfo(int nbrOfCPU){
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("Time clock: " + timeClock);
-        System.out.println("Running");
-        System.out.println("Ready Queue");
-
-        for (Process process : readyQueue) {
-            System.out.println("\t"+process);
-        }
-
-        System.out.println("Wait Queue");
-        for (Process process : waitQueue) {
-            System.out.println("\t"+process);
-        }
-
-        System.out.println("Terminated");
-        for (Process process : processes) {
-            if (process.pcb.processState.equals(ProcessState.TERMINATED)){
-                System.out.println("\t" + process);
-            }
-        }
-    }
     public void printInfo(ArrayList<Process> currentProcesses, int nbrOfCPU){
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("Time clock: " + timeClock);
@@ -577,7 +577,7 @@ class CPUScheduler {
         System.out.println("CPU Utilization = " + result + "%");
     }
 
-    public void printWaitingTime(ArrayList<Process> processes,int timeClock){
+    public void printWaitingTime(ArrayList<Process> processes){
         ArrayList<Integer> waitingTime = new ArrayList<>();
         for (Process process: processes) {
             int singleWaitTime = process.pcb.finishingTime - process.pcb.arrivalTime - process.totalExecTime;
