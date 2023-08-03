@@ -1,4 +1,3 @@
-//todo: ask question about finishing time, check with printTurnAroundTime.
 import java.io.*;
 import java.util.*;
 
@@ -61,21 +60,20 @@ public class CPUSchedulerSimulation {
         CPUScheduler cs3 = new CPUScheduler(processes3);
 
 
-        //todo: make a different method for each Schedule
         cs.executeFCFSMulti(nbrOfCPU);
         CPUScheduler.timeClock = 0;
+        System.out.println("\n*****************");
         System.out.println("*****************");
         System.out.println("*****************");
         System.out.println("*****************");
-        System.out.println("*****************");
-        System.out.println("*****************");
+        System.out.println("*****************\n");
         cs2.executeSJF(nbrOfCPU);
         CPUScheduler.timeClock = 0;
+        System.out.println("\n*****************");
         System.out.println("*****************");
         System.out.println("*****************");
         System.out.println("*****************");
-        System.out.println("*****************");
-        System.out.println("*****************");
+        System.out.println("*****************\n");
         cs3.executeRR(nbrOfCPU, q);
 
 
@@ -88,7 +86,6 @@ public class CPUSchedulerSimulation {
         }
     }
 
-    //TODO: Done
     public static Process parseProcessDataString(String s){
         ArrayList<Integer> ioRequests = new ArrayList<>();
 
@@ -275,15 +272,20 @@ class CPUScheduler {
         }
         return true;
     }
-    public void increaseCounter(ArrayList<Process> currentProcesses){
+    public void increaseCounter(ArrayList<Process> currentProcesses, int[] cpuUtilization){
         for (Process process : currentProcesses) {
             process.pcb.programCounter++;
+            cpuUtilization[process.pcb.cpuCore-1]++;
         }
     }
 
 
     public void executeFCFSMulti(int nbrOfCPU){
         System.out.println("Executing FCFS on " + nbrOfCPU + " cores");
+
+        int[] cpuUtilization = new int[nbrOfCPU];
+        Arrays.fill(cpuUtilization, 0);
+
         if(nbrOfCPU == 0){
             System.out.println("CPU has 0 cores, impossible to run..");
             return;
@@ -315,7 +317,7 @@ class CPUScheduler {
             }
 
             //increase counter
-            increaseCounter(currentProcesses);
+            increaseCounter(currentProcesses, cpuUtilization);
             updateWaitQueueTime();
 
 
@@ -335,7 +337,7 @@ class CPUScheduler {
                 if (currentProcess.pcb.programCounter == currentProcess.totalExecTime && !currentProcess.pcb.processState.equals(ProcessState.WAITING)) {
                     isFreeCore[currentProcess.pcb.cpuCore-1] = true;
                     currentProcess.pcb.processState = ProcessState.TERMINATED;
-                    currentProcess.pcb.finishingTime = timeClock;
+                    currentProcess.pcb.finishingTime = timeClock+1;
                     currentProcess.pcb.cpuCore = 0;
                     currentProcessIterator.remove();
                 }
@@ -349,7 +351,7 @@ class CPUScheduler {
         System.out.println("--------------");
         System.out.println("Additional Information on FCFS on "+nbrOfCPU+" cores");
 
-        printCPUUtilization(processes, timeClock, nbrOfCPU);
+        printCPUUtilization(timeClock, nbrOfCPU, cpuUtilization);
         printWaitingTime(processes);
         printTurnAroundTime(processes);
         printCPUResponseTime(processes);
@@ -357,6 +359,9 @@ class CPUScheduler {
     //non preemptive.
     public void executeSJF(int nbrOfCPU){
         System.out.println("Executing SJF (non-preemtive) on " + nbrOfCPU + " cores");
+        int[] cpuUtilization = new int[nbrOfCPU];
+        Arrays.fill(cpuUtilization, 0);
+
         if(nbrOfCPU == 0){
             System.out.println("CPU has 0 cores, impossible to run..");
             return;
@@ -395,7 +400,7 @@ class CPUScheduler {
             }
 
             //increase counter
-            increaseCounter(currentProcesses);
+            increaseCounter(currentProcesses, cpuUtilization);
             updateWaitQueueTime();
 
 
@@ -429,28 +434,29 @@ class CPUScheduler {
         System.out.println("--------------");
         System.out.println("Additional Information on SJF on "+nbrOfCPU+" cores");
 
-        //todo: print CPU utilization
-        printCPUUtilization(processes, timeClock, nbrOfCPU);
-        //todo: print Avg wait time
+        printCPUUtilization(timeClock, nbrOfCPU, cpuUtilization);
         printWaitingTime(processes);
-        //todo: print turnaround time for each process
         printTurnAroundTime(processes);
-        //todo: print CPU response time for each process
         printCPUResponseTime(processes);
 
     }
 
-    //todo: Round Robin
     public void executeRR(int nbrOfCPU, int q){
         System.out.println("Executing RR on " + nbrOfCPU + " cores");
+
+        //to keep track of CPU utilization.
+        int[] cpuUtilization = new int[nbrOfCPU];
+        Arrays.fill(cpuUtilization, 0);
+
         if(nbrOfCPU == 0){
             System.out.println("CPU has 0 cores, impossible to run..");
             return;
         }
         if (q == 0){
-            System.out.println("Quamtum unit is 0, will not work"); //todo: fix that
+            System.out.println("Quantum unit is 0, impossible to run..");
             return;
         }
+
         ArrayList<Process> currentProcesses = new ArrayList<>();
         boolean[] isFreeCore = new boolean[nbrOfCPU];
         Arrays.fill(isFreeCore, true);
@@ -479,7 +485,7 @@ class CPUScheduler {
             }
 
             //increase counter
-            increaseCounter(currentProcesses);
+            increaseCounter(currentProcesses, cpuUtilization);
             //increase qTime
             for (Process p : currentProcesses) {
                 p.pcb.qTime +=1;
@@ -525,7 +531,7 @@ class CPUScheduler {
         System.out.println("--------------");
         System.out.println("Additional Information on RR on "+nbrOfCPU+" cores");
 
-        printCPUUtilization(processes, timeClock, nbrOfCPU);
+        printCPUUtilization(timeClock, nbrOfCPU, cpuUtilization);
         printWaitingTime(processes);
         printTurnAroundTime(processes);
         printCPUResponseTime(processes);
@@ -564,17 +570,13 @@ class CPUScheduler {
             }
         }
     }
-    public void printCPUUtilization(ArrayList<Process> processes, int timeClock, int nbrOfCPU){
-        int totalProgramCounters = 0;
-        for (Process p :
-                processes) {
-            totalProgramCounters += p.totalExecTime;
+    public void printCPUUtilization(int timeClock, int nbrOfCPU, int[] cpuUtilization){
+        System.out.println("CPU Utilization:");
+        for (int i = 0; i < nbrOfCPU; i++) {
+            double CPUUtilization = ((double)cpuUtilization[i]/ (double) timeClock)* 100;
+            String result = String.format("%.2f", CPUUtilization);
+            System.out.println("\tCPU core " + (i+1)+ ": " + result + "%");
         }
-
-        double CPUUtilization = ((double) totalProgramCounters)/((double)(timeClock-1)*(double)nbrOfCPU) * 100;
-        String result = String.format("%.2f", CPUUtilization);
-
-        System.out.println("CPU Utilization = " + result + "%");
     }
 
     public void printWaitingTime(ArrayList<Process> processes){
