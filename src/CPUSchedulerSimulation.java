@@ -420,7 +420,7 @@ class CPUScheduler {
                 if (currentProcess.pcb.programCounter == currentProcess.totalExecTime && !currentProcess.pcb.processState.equals(ProcessState.WAITING)) {
                     isFreeCore[currentProcess.pcb.cpuCore-1] = true;
                     currentProcess.pcb.processState = ProcessState.TERMINATED;
-                    currentProcess.pcb.finishingTime = timeClock;
+                    currentProcess.pcb.finishingTime = timeClock+1;
                     currentProcess.pcb.cpuCore = 0;
                     currentProcessIterator.remove();
                 }
@@ -510,7 +510,7 @@ class CPUScheduler {
                 if (currentProcess.pcb.programCounter == currentProcess.totalExecTime && !currentProcess.pcb.processState.equals(ProcessState.WAITING)) {
                     isFreeCore[currentProcess.pcb.cpuCore-1] = true;
                     currentProcess.pcb.processState = ProcessState.TERMINATED;
-                    currentProcess.pcb.finishingTime = timeClock;
+                    currentProcess.pcb.finishingTime = timeClock+1;
                     currentProcess.pcb.qTime = 0; //only in RR
                     currentProcessIterator.remove();
                 }
